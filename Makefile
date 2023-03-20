@@ -16,14 +16,3 @@ requirements:
 	pip install --upgrade pip
 	poetry install --remove-untracked
 	make install-pre-commit
-
-test:
-	pytest --cov=pythogen tests/ -sq
-
-test-clients:
-	docker-compose up -d --build mock_server ;\
-	docker-compose up --build tests ;\
-	test_status_code=$$? ;\
-	# docker-compose logs mock_server;\
-	docker-compose down --remove-orphans ;\
-	exit $$test_status_code

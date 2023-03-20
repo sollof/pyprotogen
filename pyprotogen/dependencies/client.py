@@ -1,10 +1,12 @@
-from grpc.aio import insecure_channel, secure_channel
+from grpc.aio import insecure_channel, secure_channel, Channel
 from grpc import ssl_channel_credentials
 from py_grpc_prometheus.aio.prometheus_aio_client_interceptor import PromAioClientInterceptor
 from .interceptors.client_logging import LoggingClientInterceptor
 
 
-def get_channel(host: str, cert: str | None = None, enable_metrics: bool = True, enable_logging: bool = True):
+def get_channel(
+    host: str, cert: str | None = None, enable_metrics: bool = True, enable_logging: bool = True,
+) -> Channel:
     interceptors = []
     if enable_logging:
         prom = PromAioClientInterceptor(
