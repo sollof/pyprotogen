@@ -32,7 +32,9 @@ def init_package(
     return InitPackageResponse(client_output_path=str(sources_path.joinpath(f'{package_name}.py')))
 
 
-def _create_pyproject_file(output_dir: Path, package_name: str, version: str, authors: Optional[str] = None) -> None:
+def _create_pyproject_file(
+    output_dir: Path, package_name: str, version: str, authors: Optional[str] = None
+) -> None:
     env = Environment(
         loader=FileSystemLoader(settings.TEMPLATES_DIR_PATH),
         extensions=['jinja2.ext.loopcontrols'],

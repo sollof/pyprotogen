@@ -6,7 +6,9 @@ import shutil
 
 
 def copy_dependencies(output_path: str) -> None:
-    shutil.copytree(settings.DEPENDENCIES_DIR_PATH, Path(output_path).absolute(), dirs_exist_ok=True)
+    shutil.copytree(
+        settings.DEPENDENCIES_DIR_PATH, Path(output_path).absolute(), dirs_exist_ok=True
+    )
 
 
 def gen_pb2_files(proto_path: str, output_path: str) -> None:
