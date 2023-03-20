@@ -29,7 +29,7 @@ class LoggingClientInterceptor(UnaryUnaryClientInterceptor):
             details = await handler.details()
             request_msg = loads(MessageToJson(request, preserving_proto_field_name=True))
 
-            log_msg = f'grpc error'
+            log_msg = 'grpc error'
             log_msg += f' | {service=}'
             log_msg += f' | {method=}'
             log_msg += f' | {grpc_type=}'
