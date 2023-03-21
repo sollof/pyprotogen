@@ -16,3 +16,6 @@ requirements:
 	pip install --upgrade pip
 	poetry install --remove-untracked
 	make install-pre-commit
+
+test:
+	pytest tests/ -sq

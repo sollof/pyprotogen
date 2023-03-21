@@ -2,6 +2,7 @@
 name = "pyprotogen"
 version = "0.0.1"
 description = ""
+repository = "https://github.com/sollof/pyprotogen"
 authors = ["Sergio Soldatov <soldatovsr97@gmail.com>"]
 readme = "README.md"
 
