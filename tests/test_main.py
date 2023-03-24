@@ -5,7 +5,7 @@ from tempfile import TemporaryDirectory
 
 runner = CliRunner()
 
-PROTO_PATH = "tests/protos/hello.proto"
+PROTO_PATH = "tests/protos"
 GEN_DIR = 'genpack'
 
 
