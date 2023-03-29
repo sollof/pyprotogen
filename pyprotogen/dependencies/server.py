@@ -1,5 +1,5 @@
 from grpc.aio import server, Server
-from py_grpc_prometheus.aio.prometheus_aio_server_interceptor import PromAioServerInterceptor
+from grpc_prometheus_metrics.aio.prometheus_aio_server_interceptor import PromAioServerInterceptor
 
 
 def get_server(enable_metrics: bool = True) -> Server:
