@@ -29,7 +29,7 @@ def init_package(
     sources_path.mkdir(parents=True, exist_ok=True)
     _create_init_file(sources_path, package_name)
 
-    return InitPackageResponse(client_output_path=str(sources_path.joinpath(f'{package_name}.py')))
+    return InitPackageResponse(client_output_path=str(sources_path))
 
 
 def _create_pyproject_file(
