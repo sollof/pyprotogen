@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyprotogen"
-version = "0.0.3"
+version = "0.0.4"
 description = ""
 repository = "https://github.com/sollof/pyprotogen"
 authors = ["Sergio Soldatov <soldatovsr97@gmail.com>"]
