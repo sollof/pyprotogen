@@ -47,6 +47,7 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
             new_name = f'{name.replace(".", "/")}{extension}'
             os.rename(file, f'{file.parent}/{new_name}')
 
+    for file in grpc_gen_path.rglob('*.py'):
         with open(file, "r") as sources:
             lines = sources.readlines()
         with open(file, "w") as sources:
