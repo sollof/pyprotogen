@@ -2,8 +2,8 @@ from grpc.aio import insecure_channel, secure_channel, Channel
 from grpc import ssl_channel_credentials
 from grpc_prometheus_metrics.aio.prometheus_aio_client_interceptor import PromAioClientInterceptor
 
-from interceptors.client_logging import LoggingClientInterceptor
-from interceptors.metadata import MetadataClientInterceptor
+from {{ package_name }}.interceptors.client_logging import LoggingClientInterceptor
+from {{ package_name }}.interceptors.metadata import MetadataClientInterceptor
 
 
 def get_channel(

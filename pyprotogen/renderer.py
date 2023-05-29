@@ -6,7 +6,25 @@ from importlib import resources
 from pathlib import Path
 
 from grpc_tools import protoc
+from jinja2 import Environment, FileSystemLoader
+
 from pyprotogen import settings
+
+
+def create_client(
+    output_path: str, package_name: str
+) -> None:
+    output_dir = Path(output_path)
+    env = Environment(
+        loader=FileSystemLoader(settings.TEMPLATES_DIR_PATH),
+        extensions=['jinja2.ext.loopcontrols'],
+    )
+    template = env.get_template('client-py.j2')
+
+    client_path = output_dir.joinpath('client.py')
+
+    with open(client_path, 'w') as client_file:
+        client_file.write(template.render(package_name=package_name))
 
 
 def copy_dependencies(output_path: str) -> None:

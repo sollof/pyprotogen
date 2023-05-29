@@ -17,6 +17,7 @@ def main(
     package_version: Optional[str] = typer.Option(None, help="package version"),
     package_authors: Optional[str] = typer.Option(None, help="package authors"),
 ):
+    package_name = ''
     if package_version:
         resp = packager.init_package(
             output_path=output,
@@ -25,9 +26,10 @@ def main(
             package_authors=package_authors,
         )
         output = resp.client_output_path
+        package_name = resp.package_name
 
     renderer.gen_pb2_files(input, output)
-
+    renderer.create_client(output, package_name)
     renderer.copy_dependencies(output)
 
 
