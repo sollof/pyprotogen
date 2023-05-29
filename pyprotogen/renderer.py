@@ -39,7 +39,7 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
     include = ['-I{}'.format(proto_include)]
     protoc.main(args + include)
 
-    for file in grpc_gen_path.iterdir():
+    for file in grpc_gen_path.rglob('*.py'):
         with open(file, "r") as sources:
             lines = sources.readlines()
         with open(file, "w") as sources:
