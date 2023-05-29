@@ -1,10 +1,12 @@
+import os
 import re
+import shutil
+
 from importlib import resources
 from pathlib import Path
 
 from grpc_tools import protoc
 from pyprotogen import settings
-import shutil
 
 
 def copy_dependencies(output_path: str) -> None:
@@ -40,10 +42,17 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
     protoc.main(args + include)
 
     for file in grpc_gen_path.rglob('*.py'):
+        name, extension = os.path.splitext(file.name)
+        if '.' in name:
+            new_name = f'{name.replace(".", "/")}{extension}'
+            os.rename(file, f'{file.parent}/{new_name}')
+
         with open(file, "r") as sources:
             lines = sources.readlines()
         with open(file, "w") as sources:
             for line in lines:
                 if re.search(r'^import .*_pb2 as', line) is not None:
                     line = 'from . ' + line
+                if re.search(r'^from .* import .*_pb2 as', line) is not None:
+                    line = 'from . import' + line.split('import')[1]
                 sources.write(line)
