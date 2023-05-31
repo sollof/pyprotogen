@@ -17,5 +17,5 @@ class MetadataClientInterceptor(UnaryUnaryClientInterceptor):
         client_call_details: ClientCallDetails,
         request: RequestType,
     ) -> UnaryUnaryCall | ResponseType:
-        client_call_details.metadata.add('client-name', self.client_name)
+        client_call_details.metadata.add('client_name', self.client_name)
         return await continuation(client_call_details, request)
