@@ -14,14 +14,14 @@ def get_channel(
     enable_logging: bool = True
 ) -> Channel:
     interceptors = []
-    if enable_logging:
+    if enable_metrics:
         prom = PromAioClientInterceptor(
             enable_client_handling_time_histogram=True,
             enable_client_stream_receive_time_histogram=True,
             enable_client_stream_send_time_histogram=True,
         )
         interceptors.append(prom)
-    if enable_metrics:
+    if enable_logging:
         log = LoggingClientInterceptor()
         interceptors.append(log)
     if client_name is not None:
