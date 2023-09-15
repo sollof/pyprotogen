@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyprotogen"
-version = "0.0.12"
+version = "0.0.13"
 description = ""
 repository = "https://github.com/sollof/pyprotogen"
 authors = ["Sergio Soldatov <soldatovsr97@gmail.com>"]
@@ -34,6 +34,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 fixable = ["E", "F"]
+ignore = ["E501"]
 exclude = [
     ".eggs",
     ".git",
@@ -44,3 +45,7 @@ exclude = [
     "env",
 ]
 line-length = 100
+
+[tool.black]
+line-length = 100
+skip-string-normalization = true

@@ -11,9 +11,7 @@ from jinja2 import Environment, FileSystemLoader
 from pyprotogen import settings
 
 
-def create_client(
-    output_path: str, package_name: str
-) -> None:
+def create_client(output_path: str, package_name: str) -> None:
     output_dir = Path(output_path)
     env = Environment(
         loader=FileSystemLoader(settings.TEMPLATES_DIR_PATH),
@@ -72,6 +70,8 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
             for line in lines:
                 if re.search(r'^import .*_pb2 as', line) is not None:
                     line = 'from . ' + line
-                if re.search(r'^from .* import .*_pb2 as', line) is not None:
+                if re.search(
+                    r'^from .* import .*_pb2 as', line
+                ) is not None and not line.startswith('from google.protobuf'):
                     line = 'from . import' + line.split('import')[1]
                 sources.write(line)

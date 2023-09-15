@@ -46,6 +46,6 @@ class LoggingClientInterceptor(UnaryUnaryClientInterceptor):
                     'code': code,
                     'details': details,
                     'request_msg': request_msg,
-                }
+                },
             )
         return handler

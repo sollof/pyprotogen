@@ -14,8 +14,7 @@ class MetadataClientInterceptor(UnaryUnaryClientInterceptor):
         self.client_name = client_name
 
     def propagate_metadata_in_details(
-        self,
-        client_call_details: ClientCallDetails
+        self, client_call_details: ClientCallDetails
     ) -> ClientCallDetails:
         metadata = client_call_details.metadata
         if not metadata:
