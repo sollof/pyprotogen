@@ -1,6 +1,6 @@
 from grpc.aio import insecure_channel, secure_channel, Channel
 from grpc import ssl_channel_credentials
-from grpc_prometheus_metrics.aio.prometheus_aio_client_interceptor import PromAioClientInterceptor
+from grpc_prometheus_metrics.aio.prometheus_aio_client_interceptor import PromAioUnaryUnaryClientInterceptor
 from opentelemetry.instrumentation.grpc import aio_client_interceptors
 
 from {{ package_name }}.interceptors.client_logging import LoggingClientInterceptor
@@ -19,11 +19,7 @@ def get_channel(
     if enable_opentelemetry:
         interceptors = aio_client_interceptors()
     if enable_metrics:
-        prom = PromAioClientInterceptor(
-            enable_client_handling_time_histogram=True,
-            enable_client_stream_receive_time_histogram=True,
-            enable_client_stream_send_time_histogram=True,
-        )
+        prom = PromAioUnaryUnaryClientInterceptor(enable_client_handling_time_histogram=True)
         interceptors.append(prom)
     if enable_logging:
         log = LoggingClientInterceptor()
