@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyprotogen"
-version = "0.0.20"
+version = "0.0.21"
 description = ""
 repository = "https://github.com/sollof/pyprotogen"
 authors = ["Sergio Soldatov <soldatovsr97@gmail.com>"]
@@ -14,7 +14,7 @@ grpcio-tools = "1.59.3"
 orjson = "^3.8.7"
 mypy-protobuf = "^3.4.0"
 opentelemetry-instrumentation-grpc = "0.37b"
-grpc-prometheus-metrics = "0.0.4"
+grpc-prometheus-metrics = "0.0.5"
 
 [tool.poetry.scripts]
 pyprotogen = 'pyprotogen.main:run'

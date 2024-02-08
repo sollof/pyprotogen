@@ -188,14 +188,14 @@ testing = ["covdefaults (>=2.3)", "coverage (>=7.2.1)", "pytest (>=7.2.2)", "pyt
 
 [[package]]
 name = "grpc-prometheus-metrics"
-version = "0.0.4"
+version = "0.0.5"
 description = "Python gRPC Prometheus Interceptors, py-grpc-prometheus fork"
 category = "main"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "grpc_prometheus_metrics-0.0.4-py3-none-any.whl", hash = "sha256:5e2b8b8c6d55a16fbf5fb1d491ab51b1ff1594b7f02316949932527206b74375"},
-    {file = "grpc_prometheus_metrics-0.0.4.tar.gz", hash = "sha256:77d54f08821ec050b0944243c202226680ce4fd59cdaf2291296d0065543f3c2"},
+    {file = "grpc_prometheus_metrics-0.0.5-py3-none-any.whl", hash = "sha256:c9f6681107381ebfa8cc7059b0a39a333a3cf323b7738d13fe3b4be7fa49dafd"},
+    {file = "grpc_prometheus_metrics-0.0.5.tar.gz", hash = "sha256:e526d621155929b65e9509eade2845964886d2edb5b18a413bfc55dcbac72c51"},
 ]
 
 [package.dependencies]
@@ -1028,4 +1028,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "0261766f1100a5529a97370f57d16e72490ce7b21aeea53a1de55f6118e3cc56"
+content-hash = "5ec8b932d962fc14aa4a4a56fed1b2a659818c0b555dcb9706335d39e2ee51ee"
