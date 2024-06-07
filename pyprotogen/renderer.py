@@ -2,7 +2,6 @@ import os
 import re
 import shutil
 
-from importlib import resources
 from pathlib import Path
 
 from grpc_tools import protoc
@@ -53,7 +52,7 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
         f'--grpc_python_out={grpc_gen_path}',
         *proto_files,
     ]
-    proto_include = resources.path('grpc_tools', '_proto')
+    proto_include = protoc.pkg_resources.resource_filename('grpc_tools', '_proto')
     include = ['-I{}'.format(proto_include)]
     protoc.main(args + include)
 
