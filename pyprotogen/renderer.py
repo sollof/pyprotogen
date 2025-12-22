@@ -3,6 +3,7 @@ import re
 import shutil
 import grpc_tools
 
+from grpc_tools import protoc
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from pyprotogen import settings
@@ -52,7 +53,7 @@ def gen_pb2_files(proto_path: str, output_path: str) -> None:
     ]
     proto_include = os.path.join(os.path.dirname(grpc_tools.__file__), '_proto')
     include = ['-I{}'.format(proto_include)]
-    grpc_tools.protoc.main(args + include)
+    protoc.main(args + include)
 
     for file in grpc_gen_path.rglob('*.py'):
         name, extension = os.path.splitext(file.name)
