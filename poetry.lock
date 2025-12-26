@@ -437,19 +437,19 @@ files = [
 
 [[package]]
 name = "mypy-protobuf"
-version = "3.4.0"
+version = "3.7.0"
 description = "Generate mypy stub files from protobuf specs"
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "mypy-protobuf-3.4.0.tar.gz", hash = "sha256:7d75a079651b105076776a35a5405e3fa773b8a167118f1b712e443e9a6c18a2"},
-    {file = "mypy_protobuf-3.4.0-py3-none-any.whl", hash = "sha256:da33dfde7547ff57e5ba5564126cbfa114f14413b2fa50759b1fa5de1e4ab511"},
+    {file = "mypy_protobuf-3.7.0-py3-none-any.whl", hash = "sha256:85256e9d4da935722ce8fbaa8d19397e1a2989aa8075c96577987de9fe7cea4d"},
+    {file = "mypy_protobuf-3.7.0.tar.gz", hash = "sha256:912fb281f7c7b3e3a7c9b8695712618a716fddbab70f6ad63eaf68eda80c5efe"},
 ]
 
 [package.dependencies]
-protobuf = ">=4.21.8"
-types-protobuf = ">=3.20.4"
+protobuf = ">=4.25.3"
+types-protobuf = ">=4.24"
 
 [[package]]
 name = "nodeenv"
@@ -836,14 +836,14 @@ test = ["black (>=22.3.0,<23.0.0)", "coverage (>=5.2,<6.0)", "isort (>=5.0.6,<6.
 
 [[package]]
 name = "types-protobuf"
-version = "4.22.0.0"
+version = "6.32.1.20251210"
 description = "Typing stubs for protobuf"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.9"
 files = [
-    {file = "types-protobuf-4.22.0.0.tar.gz", hash = "sha256:bf2b414d815dc387c0a041d9207db054c7cdb94591bb233d9b71a85243e05efc"},
-    {file = "types_protobuf-4.22.0.0-py3-none-any.whl", hash = "sha256:1e59294618c9518f35f17ae1a3d866cdf7e998eb4b9907d41e9ebe5b84fde636"},
+    {file = "types_protobuf-6.32.1.20251210-py3-none-any.whl", hash = "sha256:2641f78f3696822a048cfb8d0ff42ccd85c25f12f871fbebe86da63793692140"},
+    {file = "types_protobuf-6.32.1.20251210.tar.gz", hash = "sha256:c698bb3f020274b1a2798ae09dc773728ce3f75209a35187bd11916ebfde6763"},
 ]
 
 [[package]]
@@ -983,4 +983,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a43f53ecc84e26f2664e94904806969e32a7a219dcf700287a540ec12710c356"
+content-hash = "698e8e5f6616cbfd1323fdd95aba312bdb1c17980f5f78202ecabc734a350ea4"
